@@ -14,11 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DeliveryCardTest {
-    public String generateDate(long addDays, String pattern) {
-        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
-    }
-    String planningDate = generateDate(4, "dd.mm.yyyy");
-
+    LocalDate date = new LocalDate();
     @Test
     void cardTest() throws InterruptedException {
         open("http://localhost:9999/");
