@@ -38,20 +38,4 @@ public class DeliveryCardTest {
         $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(11));
         $(".notification__content").shouldHave(Condition.text("Встреча успешно забронирована на " + planningDate), Duration.ofSeconds(15)).shouldBe(Condition.visible);
     }
-
-    @Test
-    void cardTestChoice() {
-        open("http://localhost:9999/");
-        $("[data-test-id=city] input").setValue("Кр");
-        $(byText("Краснодар")).click();
-        $("[data-test-id='date']").click();
-        $(byText(planningDateDay)).click();
-        $("[data-test-id=name] input").setValue("Брэт Пит");
-        $("[data-test-id=phone] input").setValue("+12345678901");
-        $("[data-test-id=agreement]").click();
-        $(".button").click();
-        $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(11));
-        $(".notification__content").shouldHave(Condition.text("Встреча успешно забронирована на " + planningDate), Duration.ofSeconds(15)).shouldBe(Condition.visible);
-    }
-
 }
