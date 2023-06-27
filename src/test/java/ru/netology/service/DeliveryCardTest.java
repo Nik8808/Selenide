@@ -40,13 +40,12 @@ public class DeliveryCardTest {
     }
 
     @Test
-    void cardTestChoice() throws InterruptedException{
+    void cardTestChoice() {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Кр");
         $(byText("Краснодар")).click();
         $("[data-test-id='date']").click();
         $(byText(planningDateDay)).click();
-        Thread.sleep(2000);
         $("[data-test-id=name] input").setValue("Брэт Пит");
         $("[data-test-id=phone] input").setValue("+12345678901");
         $("[data-test-id=agreement]").click();
